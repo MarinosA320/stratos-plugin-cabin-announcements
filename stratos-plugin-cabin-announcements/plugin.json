@@ -1,0 +1,32 @@
+{
+  "$schema": "https://cdn.skyvexsoftware.com/schemas/stratos-plugin.json",
+  "id": "cabin-announcements",
+  "type": "airline",
+  "name": "Cabin Announcements",
+  "version": "1.0.0",
+  "description": "Automatic cabin PA for every flight, in Greek and English. Plays the welcome, crew door commands, safety demonstration, seats for take-off, after take-off, the captain's cruise and descent announcements, landing preparation, welcome to destination and farewell — each triggered by the real flight phase, lights and altitude. Includes go-around and turbulence announcements and a soundboard to play any of them on demand.",
+  "author": {
+    "id": "greekconnect",
+    "name": "GreekConnect Virtual Airline"
+  },
+  "homepage": "https://greekconnect-airline.com/",
+  "icon_light": "icon-light.svg",
+  "icon_dark": "icon-dark.svg",
+  "availableSettings": [
+    { "key": "enabled", "name": "Automatic announcements", "description": "Play announcements automatically during tracked flights. The soundboard still works when this is off.", "type": "boolean", "scope": "user", "default": true },
+    { "key": "language", "name": "Language", "type": "radio", "scope": "user", "default": "el_en",
+      "description": "Crew commands (arm/disarm doors, seats for take-off/landing) are always in English, as on real Greek airlines.",
+      "options": [
+        { "value": "el_en", "label": "Greek, then English" },
+        { "value": "en_el", "label": "English, then Greek" },
+        { "value": "en", "label": "English only" },
+        { "value": "el", "label": "Greek only" }
+      ] },
+    { "key": "chime", "name": "Play PA chime", "description": "Ding-dong before passenger announcements and a single chime before crew commands.", "type": "boolean", "scope": "user", "default": true },
+    { "key": "cabinAnnouncements", "name": "Cabin crew announcements", "description": "Welcome, after take-off, prepare for landing, welcome to destination, farewell.", "type": "boolean", "scope": "user", "default": true },
+    { "key": "captainAnnouncements", "name": "Captain announcements", "description": "Cruise welcome, top of descent, go-around.", "type": "boolean", "scope": "user", "default": true },
+    { "key": "crewCommands", "name": "Crew commands", "description": "Arm/disarm doors and cross-check, seats for take-off and landing.", "type": "boolean", "scope": "user", "default": true },
+    { "key": "safetyDemo", "name": "Safety demonstration", "description": "Plays during taxi-out (about two minutes in both languages).", "type": "boolean", "scope": "user", "default": true },
+    { "key": "cruiseDelaySec", "name": "Captain's cruise announcement delay (seconds)", "description": "How long after reaching cruise the captain speaks.", "type": "number", "scope": "user", "default": 90, "min": 0, "max": 900, "step": 15 }
+  ]
+}
